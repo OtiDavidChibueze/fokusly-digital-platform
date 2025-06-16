@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+
+class TextWidget extends StatelessWidget {
+  final String text;
+  final Color? color;
+  final FontWeight? fontWeight;
+  final double? fontSize;
+  final double? LineHeight;
+  final double? letterSpacing;
+  final TextAlign? textAlign;
+
+  const TextWidget({
+    super.key,
+    required this.text,
+    this.color,
+    this.fontWeight,
+    this.fontSize,
+    this.LineHeight,
+    this.letterSpacing,
+    this.textAlign,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: color ?? Color(0xFF06545B),
+        fontWeight: fontWeight,
+        fontSize: fontSize ?? 24.0,
+        height: LineHeight,
+
+        letterSpacing: letterSpacing ?? -0.41,
+      ),
+      textAlign: textAlign,
+    );
+  }
+}
