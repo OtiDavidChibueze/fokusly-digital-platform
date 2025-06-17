@@ -11,6 +11,8 @@ class MyTextField extends StatelessWidget {
   final TextStyle? textStyle;
   final TextStyle? hintStyle;
   final String hintText;
+  final TextInputType textInputType;
+  final TextEditingController? controller;
 
   const MyTextField({
     super.key,
@@ -24,6 +26,8 @@ class MyTextField extends StatelessWidget {
     this.textStyle,
     this.hintStyle,
     required this.hintText,
+    required this.textInputType,
+    this.controller,
   });
 
   @override
@@ -38,6 +42,8 @@ class MyTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(radius),
       ),
       child: TextField(
+        controller: controller,
+        keyboardType: textInputType,
         style: textStyle ?? TextStyle(color: Color(0xFF06545B)),
         cursorColor: cursorColor ?? Color(0xFF06545B),
         decoration: InputDecoration(
