@@ -5,7 +5,7 @@ class TextWidget extends StatelessWidget {
   final Color? color;
   final FontWeight? fontWeight;
   final double? fontSize;
-  final double? LineHeight;
+  final double? lineHeight;
   final double? letterSpacing;
   final TextAlign? textAlign;
 
@@ -15,7 +15,7 @@ class TextWidget extends StatelessWidget {
     this.color,
     this.fontWeight,
     this.fontSize,
-    this.LineHeight,
+    this.lineHeight,
     this.letterSpacing,
     this.textAlign,
   });
@@ -28,7 +28,7 @@ class TextWidget extends StatelessWidget {
         color: color ?? Color(0xFF06545B),
         fontWeight: fontWeight,
         fontSize: fontSize ?? 24.0,
-        height: LineHeight,
+        height: lineHeight,
 
         letterSpacing: letterSpacing ?? -0.41,
       ),
