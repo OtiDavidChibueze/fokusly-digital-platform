@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fokusly_digital_wellbeing_app/model/user_model.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/home_page.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/intro_page.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/onBoarding/onboarding_page1.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/onboarding%20screen/onboarding_page1.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/onboarding%20screen/onboarding_page2.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/onboarding%20screen/onboarding_page3.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/sign_in_page.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/sign_up_page.dart';
 import 'package:fokusly_digital_wellbeing_app/provider/user_provider.dart';
@@ -42,7 +44,9 @@ class FokuslyApp extends StatelessWidget {
           '/home': (context) => HomePage(),
           '/signIn': (context) => SignInPage(),
           '/signUp': (context) => SignUpPage(),
-          '/onBoardingPage1': (context) => OnboardingPage1(),
+          '/onboarding1': (context) => OnboardingPage1(),
+          '/onboarding2': (context) => OnboardingPage2(),
+          '/onboarding3': (context) => OnboardingPage3(),
         },
       ),
     );
