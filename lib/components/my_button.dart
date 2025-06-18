@@ -10,7 +10,7 @@ class MyButton extends StatelessWidget {
   final FontWeight? fontWeight;
   final Color? textColor;
   final AlignmentGeometry? alignment;
-  final VoidCallback onTap;
+  final Function()? onTap;
   final EdgeInsetsGeometry? padding;
 
   const MyButton({
