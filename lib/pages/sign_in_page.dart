@@ -37,7 +37,7 @@ class _SignInPageState extends State<SignInPage> {
 
     if (user != null) {
       _showSnackBar('Login successful');
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
       emailController.clear();
       passwordController.clear();
     } else {
