@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
 
 class TextWidget extends StatelessWidget {
   final String text;
@@ -27,10 +28,10 @@ class TextWidget extends StatelessWidget {
       style: TextStyle(
         color: color ?? Color(0xFF06545B),
         fontWeight: fontWeight,
-        fontSize: fontSize ?? 24.0,
+        fontSize: fontSize ?? sp(24.0),
         height: lineHeight,
 
-        letterSpacing: letterSpacing ?? -0.41,
+        letterSpacing: letterSpacing,
       ),
       textAlign: textAlign,
     );
