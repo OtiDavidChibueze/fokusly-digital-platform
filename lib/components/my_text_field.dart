@@ -13,6 +13,8 @@ class MyTextField extends StatelessWidget {
   final String hintText;
   final TextInputType textInputType;
   final TextEditingController? controller;
+  final bool obscureText;
+  final TextCapitalization textCapitalization;
 
   const MyTextField({
     super.key,
@@ -28,6 +30,8 @@ class MyTextField extends StatelessWidget {
     required this.hintText,
     required this.textInputType,
     this.controller,
+    this.obscureText = false,
+    this.textCapitalization = TextCapitalization.none,
   });
 
   @override
@@ -42,6 +46,8 @@ class MyTextField extends StatelessWidget {
         borderRadius: BorderRadius.circular(radius),
       ),
       child: TextField(
+        textCapitalization: textCapitalization,
+        obscureText: obscureText,
         controller: controller,
         keyboardType: textInputType,
         style: textStyle ?? TextStyle(color: Color(0xFF06545B)),
