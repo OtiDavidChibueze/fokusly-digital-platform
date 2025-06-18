@@ -46,7 +46,7 @@ class _SignUpPageState extends State<SignUpPage> {
     if (result == null) {
       // Success
       _showSnackBar('Account created successfully!');
-      Navigator.pushReplacementNamed(context, '/onBoardingPage1');
+      Navigator.pushReplacementNamed(context, '/onboarding1');
 
       fullnameController.clear();
       emailController.clear();
