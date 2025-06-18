@@ -44,7 +44,6 @@ class _SignUpPageState extends State<SignUpPage> {
     setState(() => _isLoading = false);
 
     if (result == null) {
-      // Success
       _showSnackBar('Account created successfully!');
       Navigator.pushNamedAndRemoveUntil(
         context,
@@ -126,8 +125,9 @@ class _SignUpPageState extends State<SignUpPage> {
                 child: Column(
                   children: [
                     MyTextField(
+                      textCapitalization: TextCapitalization.words,
                       controller: fullnameController,
-                      textInputType: TextInputType.name,
+                      textInputType: TextInputType.text,
                       padding: EdgeInsets.only(left: h(20)),
                       width: w(289),
                       height: h(42),
@@ -146,7 +146,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     VSpace(10),
                     MyTextField(
                       controller: emailController,
-                      textInputType: TextInputType.text,
+                      textInputType: TextInputType.emailAddress,
                       padding: EdgeInsets.only(left: w(21)),
                       width: w(289),
                       height: h(40),
@@ -165,8 +165,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     VSpace(9),
 
                     MyTextField(
+                      obscureText: true,
                       controller: passwordController,
-                      textInputType: TextInputType.text,
+                      textInputType: TextInputType.visiblePassword,
                       padding: EdgeInsets.only(left: 21),
                       width: w(289),
                       height: h(40),
