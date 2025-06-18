@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:simple_animations/simple_animations.dart';
 
 class IntroPage extends StatefulWidget {
   const IntroPage({super.key});
@@ -13,7 +12,7 @@ class _IntroPageState extends State<IntroPage> {
   void initState() {
     super.initState();
 
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 5), () {
       Navigator.pushReplacementNamed(context, '/signIn');
     });
   }
