@@ -9,6 +9,8 @@ class TextWidget extends StatelessWidget {
   final double? lineHeight;
   final double? letterSpacing;
   final TextAlign? textAlign;
+  final String? fontFamily;
+  final TextStyle? googleFonts;
 
   const TextWidget({
     super.key,
@@ -19,20 +21,25 @@ class TextWidget extends StatelessWidget {
     this.lineHeight,
     this.letterSpacing,
     this.textAlign,
+    this.fontFamily,
+    this.googleFonts,
   });
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
-        color: color ?? Color(0xFF06545B),
-        fontWeight: fontWeight,
-        fontSize: fontSize ?? sp(24.0),
-        height: lineHeight,
+      style:
+          googleFonts ??
+          TextStyle(
+            color: color ?? Color(0xFF06545B),
+            fontWeight: fontWeight,
+            fontSize: fontSize ?? sp(24.0),
+            height: lineHeight,
 
-        letterSpacing: letterSpacing,
-      ),
+            letterSpacing: letterSpacing,
+            fontFamily: fontFamily,
+          ),
       textAlign: textAlign,
     );
   }

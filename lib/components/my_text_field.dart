@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
 
 class MyTextField extends StatelessWidget {
   final double? width;
@@ -14,7 +15,10 @@ class MyTextField extends StatelessWidget {
   final TextInputType textInputType;
   final TextEditingController? controller;
   final bool obscureText;
+  final Color borderColor;
   final TextCapitalization textCapitalization;
+  final Color fillColor;
+  final EdgeInsetsGeometry? contentPadding;
 
   const MyTextField({
     super.key,
@@ -31,32 +35,41 @@ class MyTextField extends StatelessWidget {
     required this.textInputType,
     this.controller,
     this.obscureText = false,
+    this.borderColor = const Color(0xFF06545B),
     this.textCapitalization = TextCapitalization.none,
+    this.fillColor = Colors.transparent,
+    this.contentPadding,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: height,
-      padding: padding,
-      decoration: BoxDecoration(
-        color: backgroungColor ?? Colors.transparent,
-        border: border,
-        borderRadius: BorderRadius.circular(radius),
-      ),
-      child: TextField(
-        textCapitalization: textCapitalization,
-        obscureText: obscureText,
-        controller: controller,
-        keyboardType: textInputType,
-        style: textStyle ?? TextStyle(color: Color(0xFF06545B)),
-        cursorColor: cursorColor ?? Color(0xFF06545B),
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          hintText: hintText,
-          hintStyle: hintStyle ?? TextStyle(color: Color(0xFF06545B)),
+    return TextField(
+      textCapitalization: textCapitalization,
+      obscureText: obscureText,
+      controller: controller,
+
+      keyboardType: textInputType,
+      style: textStyle ?? TextStyle(color: Color(0xFF06545B)),
+      cursorColor: cursorColor ?? Color(0xFF06545B),
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: borderColor, width: .5),
+          borderRadius: BorderRadius.circular(sr(15)),
         ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: borderColor, width: .5),
+          borderRadius: BorderRadius.circular(sr(15)),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: borderColor, width: .5),
+          borderRadius: BorderRadius.circular(sr(15)),
+        ),
+        fillColor: fillColor,
+        filled: true,
+
+        contentPadding: contentPadding,
+        hintText: hintText,
+        hintStyle: hintStyle ?? TextStyle(color: Color(0xFF06545B)),
       ),
     );
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final Color? color;
   final double radius;
   final String text;
@@ -12,11 +12,12 @@ class MyButton extends StatelessWidget {
   final AlignmentGeometry? alignment;
   final Function()? onTap;
   final EdgeInsetsGeometry? padding;
+  final BoxBorder? border;
 
   const MyButton({
     super.key,
-    required this.width,
-    required this.height,
+    this.width,
+    this.height,
     this.color,
     required this.radius,
     required this.text,
@@ -26,6 +27,7 @@ class MyButton extends StatelessWidget {
     this.alignment,
     required this.onTap,
     this.padding,
+    this.border,
   });
 
   @override
@@ -39,6 +41,7 @@ class MyButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: color ?? Color(0xFF06545B),
           borderRadius: BorderRadius.circular(radius),
+          border: border,
         ),
         child: Align(
           alignment: alignment ?? Alignment.center,
