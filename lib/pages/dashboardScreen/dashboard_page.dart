@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fokusly_digital_wellbeing_app/components/my_base_screen.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_container.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/dashboardScreen/focus_screen.dart';
@@ -42,12 +43,8 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(242, 248, 252, 1),
-      body: SizedBox(
-        width: sw(100),
-        height: sh(100),
-        child: _pages[_selectedIndex],
-      ),
+      backgroundColor: const Color.fromRGBO(242, 248, 252, 1),
+      body: _pages[_selectedIndex],
       bottomNavigationBar: Padding(
         padding: EdgeInsets.symmetric(horizontal: w(20.0), vertical: h(20.0)),
         child: ClipRRect(
