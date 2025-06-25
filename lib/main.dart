@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fokusly_digital_wellbeing_app/model/user_model.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/home_page.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/dashboardScreen/dashboard_page.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/intro_page.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/onboardingScreen/onboarding_page1.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/onboardingScreen/onboarding_page2.dart';
@@ -41,12 +41,12 @@ class FokuslyApp extends StatelessWidget {
         theme: ThemeData(fontFamily: 'Merriweather'),
         routes: {
           '/': (context) => IntroPage(),
-          '/home': (context) => HomePage(),
           '/signIn': (context) => SignInPage(),
           '/signUp': (context) => SignUpPage(),
           '/onboarding1': (context) => OnboardingPage1(),
           '/onboarding2': (context) => OnboardingPage2(),
           '/onboarding3': (context) => OnboardingPage3(),
+          '/dashboard': (context) => DashboardPage(),
         },
       ),
     );

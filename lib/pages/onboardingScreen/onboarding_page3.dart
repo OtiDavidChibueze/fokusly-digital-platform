@@ -85,7 +85,7 @@ class _OnboardingPage3State extends State<OnboardingPage3> {
               text: 'Get Started',
               onTap: () => Navigator.pushNamedAndRemoveUntil(
                 context,
-                '/home',
+                '/dashboard',
                 (route) => false,
               ),
               fontWeight: FontWeight.w700,

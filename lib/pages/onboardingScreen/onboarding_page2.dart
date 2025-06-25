@@ -85,7 +85,7 @@ class OnboardingPage2 extends StatelessWidget {
                         child: TextButton(
                           onPressed: () => Navigator.pushNamedAndRemoveUntil(
                             context,
-                            '/home',
+                            '/dashboard',
                             (route) => false,
                           ),
                           child: TextWidget(

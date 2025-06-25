@@ -103,7 +103,6 @@ class _SignUpPageState extends State<SignUpPage> {
 
               Container(
                 width: w(316),
-                height: h(330),
                 padding: EdgeInsets.only(
                   left: w(15),
                   top: h(50),
@@ -134,7 +133,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       radius: sr(7.5),
                       hintText: 'Full Name',
                       hintStyle: TextStyle(
-                        fontSize: sp(16),
+                        fontSize: sp(14),
                         color: Color.fromRGBO(6, 84, 91, 1),
                       ),
                       border: Border.all(
@@ -154,7 +153,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       hintText: 'Email',
                       hintStyle: TextStyle(
                         fontWeight: FontWeight.w400,
-                        fontSize: sp(16),
+                        fontSize: sp(14),
                       ),
                       border: Border.all(
                         width: 0.5,
@@ -175,7 +174,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       hintText: 'Password',
                       hintStyle: TextStyle(
                         fontWeight: FontWeight.w400,
-                        fontSize: sp(16),
+                        fontSize: sp(14),
                       ),
                       border: Border.all(
                         width: 0.5,

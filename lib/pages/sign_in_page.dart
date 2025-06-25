@@ -37,7 +37,11 @@ class _SignInPageState extends State<SignInPage> {
 
     if (user != null) {
       _showSnackBar('Login successful');
-      Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+      Navigator.pushNamedAndRemoveUntil(
+        context,
+        '/dashboard',
+        (route) => false,
+      );
       emailController.clear();
       passwordController.clear();
     } else {
@@ -85,7 +89,6 @@ class _SignInPageState extends State<SignInPage> {
               VSpace(26),
               Container(
                 width: w(316),
-                height: h(300),
                 padding: EdgeInsets.only(
                   top: h(50),
                   left: w(15),
