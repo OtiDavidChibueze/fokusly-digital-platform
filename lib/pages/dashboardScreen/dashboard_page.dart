@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fokusly_digital_wellbeing_app/components/my_base_screen.dart';
-import 'package:fokusly_digital_wellbeing_app/components/my_container.dart';
-import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_main_page.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_screen.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/dashboardScreen/history_screen.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/dashboardScreen/home_screen.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/dashboardScreen/settings_screen.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/mode_screen1.dart';
 import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
 
 class DashboardPage extends StatefulWidget {
