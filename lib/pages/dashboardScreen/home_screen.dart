@@ -1,111 +1,111 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fokusly_digital_wellbeing_app/bar_graph/bar_graph.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_button.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_container.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
 import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatelessWidget {
+  final void Function(int)? onNavigate;
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
+  HomeScreen({super.key, this.onNavigate});
 
-class _HomeScreenState extends State<HomeScreen> {
+  //* user weekly statistics
+  List<double> weeklyStatistics = [100.0, 54.1, 32.3, 22.9, 44.0, 25.0, 88.0];
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsetsGeometry.symmetric(horizontal: w(22)),
-      child: Column(
-        children: [
-          VSpace(25),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(sr(100)),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(sr(50)),
-                  child: Image.asset(
-                    'lib/assets/images/image_3.png',
-                    width: w(44),
-                    height: h(44),
-                    fit: BoxFit.cover,
-                  ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        VSpace(25),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(sr(100)),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(sr(50)),
+                child: Image.asset(
+                  'lib/assets/images/ninja.png',
+                  width: w(44),
+                  height: h(44),
+                  fit: BoxFit.cover,
                 ),
               ),
+            ),
 
-              HSpace(8),
+            HSpace(8),
 
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TextWidget(
-                    text: 'Good morning, David👋',
-                    googleFonts: GoogleFonts.roboto(
-                      fontWeight: FontWeight.w700,
-                      color: Colors.black,
-                      fontSize: sp(24),
-                    ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+
+              children: [
+                TextWidget(
+                  text: 'Good morning, David👋',
+                  googleFonts: GoogleFonts.roboto(
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                    fontSize: sp(24),
                   ),
+                ),
 
-                  // VSpace(5),
-                  TextWidget(
-                    text: 'Ready to start focusing?',
-                    googleFonts: GoogleFonts.roboto(
-                      fontWeight: FontWeight.w400,
-                      color: Color.fromRGBO(0, 0, 0, 0.62),
-                      fontSize: sp(14),
-                    ),
+                // VSpace(5),
+                TextWidget(
+                  text: 'Ready to start focusing?',
+                  googleFonts: GoogleFonts.roboto(
+                    fontWeight: FontWeight.w400,
+                    color: Color.fromRGBO(0, 0, 0, 0.62),
+                    fontSize: sp(14),
                   ),
-                ],
-              ),
-            ],
-          ),
-
-          VSpace(36),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-            children: [
-              //! padding error from ui left and right 29
-              MyButton(
-                padding: EdgeInsetsGeometry.symmetric(
-                  horizontal: w(23),
-                  vertical: h(13),
                 ),
-                radius: 13,
-                text: 'Start Focus Session',
-                fontSize: 14,
-                textColor: Color.fromRGBO(255, 255, 255, 1),
+              ],
+            ),
+          ],
+        ),
 
-                onTap: () {}, //? Navigate to Focus mode hub
+        VSpace(36),
+
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+          children: [
+            MyButton(
+              padding: EdgeInsetsGeometry.symmetric(
+                horizontal: w(23),
+                vertical: h(13),
               ),
+              radius: 13,
+              text: 'Start Focus Session',
+              fontSize: 14,
+              textColor: Color.fromRGBO(255, 255, 255, 1),
 
-              //! padding error from ui left and right 49
-              MyButton(
-                padding: EdgeInsetsGeometry.symmetric(
-                  horizontal: w(23),
-                  vertical: h(13),
-                ),
-                radius: 13,
-                text: 'Start Challenge',
-                fontWeight: FontWeight.w400,
-                fontSize: 14,
-                color: Colors.transparent,
-                onTap: () {}, //? Naviagte to Detox challenge,
-                border: Border.all(color: Color.fromRGBO(6, 84, 91, 1)),
-                textColor: Colors.black,
+              onTap: () => onNavigate?.call(1),
+            ),
+
+            MyButton(
+              padding: EdgeInsetsGeometry.symmetric(
+                horizontal: w(23),
+                vertical: h(13),
               ),
-            ],
-          ),
+              radius: 13,
+              text: 'Start Challenge',
+              fontWeight: FontWeight.w400,
+              fontSize: 14,
+              color: Colors.transparent,
+              onTap: () {}, //? Naviagte to Detox challenge,
+              border: Border.all(color: Color.fromRGBO(6, 84, 91, 1)),
+              textColor: Colors.black,
+            ),
+          ],
+        ),
 
-          VSpace(29),
+        VSpace(29),
 
-          ListView(
+        Expanded(
+          child: ListView(
             shrinkWrap: true,
             children: [
               MyContainer(
@@ -134,7 +134,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    // TODO -> add double quote design
+                    VSpace(25),
+
+                    SvgPicture.asset(
+                      'lib/assets/images/svg/quote.svg',
+                      fit: BoxFit.cover,
+                      width: w(37),
+                      height: h(36),
+                    ),
+
+                    VSpace(8),
+
                     TextWidget(
                       text: 'Mindful Reminder',
                       googleFonts: GoogleFonts.roboto(
@@ -154,10 +164,90 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
+
+              VSpace(10),
+
+              MyContainer(
+                padding: EdgeInsets.symmetric(
+                  horizontal: w(10),
+                  vertical: h(10),
+                ),
+                child: Column(
+                  children: [
+                    TextWidget(
+                      text: 'Statistics',
+                      fontWeight: FontWeight.w700,
+                      fontSize: sp(18),
+                    ),
+
+                    //* VSpace(5),
+                    SizedBox(
+                      height: h(147),
+                      width: sw(100),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: w(10),
+                          vertical: h(10),
+                        ),
+                        child: MyBarChart(weeklyStatistics: weeklyStatistics),
+                      ),
+                    ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextWidget(
+                          text: 'Average',
+                          fontWeight: FontWeight.w400,
+                          fontSize: sp(14),
+                          color: Colors.black,
+                        ),
+
+                        HSpace(7),
+
+                        TextWidget(
+                          text: '8h 30m',
+                          fontWeight: FontWeight.w700,
+                          fontSize: sp(14),
+                          color: Colors.black,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+
+              VSpace(18),
+
+              MyContainer(
+                radius: 13,
+                padding: EdgeInsets.only(
+                  top: h(10),
+                  right: w(65),
+                  bottom: h(19),
+                  left: w(65),
+                ),
+                child: Column(
+                  children: [
+                    TextWidget(
+                      text: 'Blocked Apps',
+                      fontWeight: FontWeight.w400,
+                      fontSize: sp(15),
+                    ),
+
+                    VSpace(17),
+
+                    SvgPicture.asset(
+                      'lib/assets/images/svg/Frame34.svg',
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
