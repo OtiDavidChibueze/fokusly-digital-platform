@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fokusly_digital_wellbeing_app/model/user_model.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/app_blocker_page.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_main_page.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_session_page1.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_session_page2.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_session_page3.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_session_page4.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_session_page5.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/mode_screen1.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/mode_screen_2.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/dashboardScreen/dashboard_page.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_screen.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/intro_page.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/onboardingScreen/onboarding_page1.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/onboardingScreen/onboarding_page2.dart';
@@ -47,6 +57,16 @@ class FokuslyApp extends StatelessWidget {
           '/onboarding2': (context) => OnboardingPage2(),
           '/onboarding3': (context) => OnboardingPage3(),
           '/dashboard': (context) => DashboardPage(),
+          '/focusMode': (context) => FocusScreen(),
+          '/focusMainPage': (context) => FocusMainPage(),
+          '/modeScreen1': (context) => ModeScreen1(),
+          '/modeScreen2': (context) => ModeScreen2(),
+          '/appBlockerPage': (context) => AppBlockerPage(),
+          '/focusSessionPage1': (context) => FocusSessionPage1(),
+          '/focusSessionPage2': (context) => FocusSessionPage2(),
+          '/focusSessionPage3': (context) => FocusSessionPage3(),
+          '/focusSessionPage4': (context) => FocusSessionPage4(),
+          '/focusSessionPage5': (context) => FocusSessionPage5(),
         },
       ),
     );
