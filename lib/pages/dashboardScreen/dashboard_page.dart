@@ -3,10 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_base_screen.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_container.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/dashboardScreen/focus_screen.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_main_page.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_screen.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/dashboardScreen/history_screen.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/dashboardScreen/home_screen.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/dashboardScreen/settings_screen.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/mode_screen1.dart';
 import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -26,6 +28,7 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   List<String> labels = ['Home', 'Focus', 'History', 'Settings'];
+
   List<String> icons = [
     'lib/assets/images/svg/Vector.svg',
     'lib/assets/images/svg/Frame46.svg',
@@ -33,9 +36,9 @@ class _DashboardPageState extends State<DashboardPage> {
     'lib/assets/images/svg/Vector1.svg',
   ];
 
-  final List<Widget> _pages = [
-    const HomeScreen(),
-    const FocusScreen(),
+  List<Widget> get _pages => [
+    HomeScreen(onNavigate: navigatePage),
+    FocusScreen(onNavigate: navigatePage),
     const HistoryScreen(),
     const SettingsScreen(),
   ];
@@ -44,7 +47,15 @@ class _DashboardPageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(242, 248, 252, 1),
-      body: _pages[_selectedIndex],
+      body: Container(
+        width: sw(100),
+        height: sh(100),
+        padding: EdgeInsets.symmetric(horizontal: w(20)),
+        color: const Color.fromRGBO(242, 248, 252, 1),
+
+        child: _pages[_selectedIndex],
+      ),
+
       bottomNavigationBar: Padding(
         padding: EdgeInsets.symmetric(horizontal: w(20.0), vertical: h(20.0)),
         child: ClipRRect(
