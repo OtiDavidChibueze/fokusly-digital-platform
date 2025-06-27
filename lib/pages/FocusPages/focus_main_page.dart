@@ -12,9 +12,9 @@ class FocusMainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        VSpace(23),
-
+        // VSpace(23),
         Row(
           children: [
             Padding(
@@ -35,8 +35,7 @@ class FocusMainPage extends StatelessWidget {
           ],
         ),
 
-        VSpace(45),
-
+        // VSpace(45),
         MyContainer(
           width: sw(100),
           padding: EdgeInsets.symmetric(horizontal: w(9)),
@@ -95,8 +94,7 @@ class FocusMainPage extends StatelessWidget {
           ),
         ),
 
-        VSpace(20),
-
+        // VSpace(20),
         MyContainer(
           width: sw(100),
           radius: 5,
@@ -132,8 +130,7 @@ class FocusMainPage extends StatelessWidget {
           ),
         ),
 
-        VSpace(20),
-
+        // VSpace(20),
         MyContainer(
           width: sw(100),
           radius: 5,
@@ -171,8 +168,7 @@ class FocusMainPage extends StatelessWidget {
           ),
         ),
 
-        VSpace(20),
-
+        // VSpace(20),
         MyContainer(
           radius: 5,
           width: sw(100),
