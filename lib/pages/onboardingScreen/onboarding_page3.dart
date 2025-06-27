@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_button.dart';
-import 'package:fokusly_digital_wellbeing_app/components/onboarding_list_tile.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
 import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
 
@@ -43,25 +42,51 @@ class _OnboardingPage3State extends State<OnboardingPage3> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TextWidget(
-                    text: "What's your focus \ngoal?",
-                    color: Color.fromRGBO(44, 152, 162, 1),
-                    fontSize: sp(32),
-                    fontWeight: FontWeight.w700,
+                  Padding(
+                    padding: EdgeInsets.only(left: w(10)),
+                    child: TextWidget(
+                      text: "What's your focus \ngoal?",
+                      color: Color.fromRGBO(44, 152, 162, 1),
+                      fontSize: sp(32),
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
 
                   VSpace(12),
 
-                  ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: goals.length,
-                    itemBuilder: (context, index) {
-                      return OnboardingListTile(
+                  ...List.generate(
+                    goals.length,
+                    (index) => ListTile(
+                      contentPadding: EdgeInsets.all(0),
+                      leading: Transform.scale(
+                        scaleX: 1.6,
+                        scaleY: 1.3,
+                        child: Checkbox(
+                          value: goals[index][1],
+                          onChanged: (value) => _toggleSwitch(value, index),
+                          side: BorderSide(
+                            color: Color.from(
+                              alpha: 1,
+                              red: 0.173,
+                              green: 0.596,
+                              blue: 0.635,
+                            ),
+                            width: w(2),
+                          ),
+                          activeColor: Color.fromRGBO(6, 84, 91, 1),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(sr(5)),
+                          ),
+                        ),
+                      ),
+
+                      title: TextWidget(
                         text: goals[index][0],
-                        value: goals[index][1],
-                        onChanged: (value) => _toggleSwitch(value, index),
-                      );
-                    },
+                        color: Color.fromRGBO(6, 84, 91, 1),
+                        fontWeight: FontWeight.w700,
+                        fontSize: sp(16),
+                      ),
+                    ),
                   ),
 
                   VSpace(9),
