@@ -28,7 +28,7 @@ class FocusScreen extends StatelessWidget {
             page = const ModeScreen2();
             break;
           case '/appBlockerPage':
-            page = const AppBlockerPage();
+            page = AppBlockerPage();
             break;
           case '/focusSessionPage1':
             page = const FocusSessionPage1();
