@@ -9,6 +9,8 @@ class MyContainer extends StatelessWidget {
   final double? radius;
   final Widget child;
   final DecorationImage? image;
+  final List<BoxShadow>? boxShadow;
+  final EdgeInsetsGeometry? margin;
 
   const MyContainer({
     super.key,
@@ -19,15 +21,19 @@ class MyContainer extends StatelessWidget {
     this.radius,
     required this.child,
     this.image,
+    this.boxShadow,
+    this.margin,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: margin,
       width: width,
       height: height,
       padding: padding,
       decoration: BoxDecoration(
+        boxShadow: boxShadow,
         color: color,
         borderRadius: BorderRadius.circular(sr(radius ?? 10.0)),
         image: image,
