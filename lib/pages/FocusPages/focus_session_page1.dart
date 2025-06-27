@@ -47,7 +47,10 @@ class FocusSessionPage1 extends StatelessWidget {
 
           VSpace(30),
 
-          FocusTimerWidget(timer: '30:00', onTap: () {}),
+          FocusTimerWidget(
+            timer: '30:00',
+            onTap: () {},
+          ), // todo -> navigate to end session page
 
           Column(
             children: [
