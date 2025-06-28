@@ -35,7 +35,6 @@ class ModeScreen2 extends StatelessWidget {
               'lib/assets/images/driving.png',
               fit: BoxFit.cover,
               width: sw(100),
-              height: h(183),
             ),
           ),
 
@@ -98,7 +97,6 @@ class ModeScreen2 extends StatelessWidget {
                         'lib/assets/images/svg/edit.svg',
                         fit: BoxFit.cover,
                         width: w(18),
-                        height: h(18),
                       ),
                     ),
                   ),
