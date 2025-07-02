@@ -23,7 +23,7 @@ class MyTextField extends StatelessWidget {
   const MyTextField({
     super.key,
     required this.width,
-    required this.height,
+    this.height,
     this.padding,
     this.backgroungColor,
     this.border,
