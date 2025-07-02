@@ -148,8 +148,6 @@ class ModeScreen1 extends StatelessWidget {
               VSpace(26),
 
               FocusListTile(
-                contentPadding: EdgeInsets.all(0),
-
                 title: TextWidget(
                   text: 'Do not disturb',
                   fontWeight: FontWeight.w400,
@@ -168,8 +166,6 @@ class ModeScreen1 extends StatelessWidget {
               VSpace(26),
 
               FocusListTile(
-                contentPadding: EdgeInsets.all(0),
-
                 title: TextWidget(
                   text: 'Wake up alarm',
                   fontWeight: FontWeight.w400,
@@ -197,6 +193,9 @@ class ModeScreen1 extends StatelessWidget {
                 radius: 50,
                 text: 'Begin Sleep Session',
                 onTap: () => Navigator.pushNamed(context, '/appBlockerPage'),
+                fontSize: sp(15),
+                width: 142,
+                fontWeight: FontWeight.w700,
               ),
 
               VSpace(36),

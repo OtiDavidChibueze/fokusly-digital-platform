@@ -15,7 +15,7 @@ class FocusSessionPage1 extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          VSpace(22),
+          VSpace(23),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -45,11 +45,12 @@ class FocusSessionPage1 extends StatelessWidget {
             ],
           ),
 
-          VSpace(30),
+          VSpace(53),
 
           FocusTimerWidget(
-            timer: '30:00',
-            onTap: () {},
+            minute: '30',
+            seconds: "00",
+            onTap: () => Navigator.pushNamed(context, '/focusSessionPage2'),
           ), // todo -> navigate to end session page
 
           Column(
@@ -80,8 +81,6 @@ class FocusSessionPage1 extends StatelessWidget {
               VSpace(18),
 
               FocusListTile(
-                contentPadding: EdgeInsets.all(0),
-
                 leading: SvgPicture.asset(
                   'lib/assets/images/svg/block.svg',
                   fit: BoxFit.cover,
@@ -108,8 +107,6 @@ class FocusSessionPage1 extends StatelessWidget {
 
               // VSpace(10),
               FocusListTile(
-                contentPadding: EdgeInsets.all(0),
-
                 leading: SvgPicture.asset(
                   'lib/assets/images/svg/speaker.svg',
                   fit: BoxFit.cover,
@@ -138,8 +135,6 @@ class FocusSessionPage1 extends StatelessWidget {
               VSpace(10),
 
               FocusListTile(
-                contentPadding: EdgeInsets.all(0),
-
                 leading: TextWidget(
                   text: 'Change Focus',
                   fontWeight: FontWeight.w400,

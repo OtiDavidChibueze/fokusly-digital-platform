@@ -13,6 +13,8 @@ class MyButton extends StatelessWidget {
   final Function()? onTap;
   final EdgeInsetsGeometry? padding;
   final BoxBorder? border;
+  final TextStyle? googleFonts;
+  // final Gradient? gradient;
 
   const MyButton({
     super.key,
@@ -28,6 +30,8 @@ class MyButton extends StatelessWidget {
     required this.onTap,
     this.padding,
     this.border,
+    this.googleFonts,
+    // this.gradient,
   });
 
   @override
@@ -39,6 +43,7 @@ class MyButton extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
+          // gradient: gradient,
           color: color ?? Color(0xFF06545B),
           borderRadius: BorderRadius.circular(radius),
           border: border,
@@ -47,11 +52,13 @@ class MyButton extends StatelessWidget {
           alignment: alignment ?? Alignment.center,
           child: Text(
             text,
-            style: TextStyle(
-              fontSize: fontSize,
-              fontWeight: fontWeight,
-              color: textColor ?? Color(0xFFFFFFFF),
-            ),
+            style:
+                googleFonts ??
+                TextStyle(
+                  fontSize: fontSize,
+                  fontWeight: fontWeight,
+                  color: textColor ?? Color(0xFFFFFFFF),
+                ),
           ),
         ),
       ),

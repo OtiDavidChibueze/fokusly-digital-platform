@@ -34,7 +34,7 @@ class _DashboardPageState extends State<DashboardPage> {
   List<Widget> get _pages => [
     HomeScreen(onNavigate: navigatePage),
     FocusScreen(onNavigate: navigatePage),
-    const HistoryScreen(),
+    HistoryScreen(),
     const SettingsScreen(),
   ];
 

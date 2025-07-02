@@ -64,7 +64,7 @@ class FocusMainPage extends StatelessWidget {
                   _buildFocusItem(
                     icon: 'lib/assets/images/svg/bed.svg',
                     title: 'Bed Time',
-                    onTap: () => Navigator.pushNamed(context, '/modeScreen1'),
+                    onTap: () => Navigator.pushNamed(context, '/detoxPage2'),
                   ),
 
                   _buildFocusItem(

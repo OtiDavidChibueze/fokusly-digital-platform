@@ -4,6 +4,7 @@ import 'package:fokusly_digital_wellbeing_app/bar_graph/bar_graph.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_button.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_container.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
+import 'package:fokusly_digital_wellbeing_app/components/utils/statistics_widget.dart';
 import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -167,55 +168,7 @@ class HomeScreen extends StatelessWidget {
 
               VSpace(10),
 
-              MyContainer(
-                padding: EdgeInsets.symmetric(
-                  horizontal: w(10),
-                  vertical: h(10),
-                ),
-                child: Column(
-                  children: [
-                    TextWidget(
-                      text: 'Statistics',
-                      fontWeight: FontWeight.w700,
-                      fontSize: sp(18),
-                    ),
-
-                    //* VSpace(5),
-                    SizedBox(
-                      height: h(147),
-                      width: sw(100),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: w(10),
-                          vertical: h(10),
-                        ),
-                        child: MyBarChart(weeklyStatistics: weeklyStatistics),
-                      ),
-                    ),
-
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextWidget(
-                          text: 'Average',
-                          fontWeight: FontWeight.w400,
-                          fontSize: sp(14),
-                          color: Colors.black,
-                        ),
-
-                        HSpace(7),
-
-                        TextWidget(
-                          text: '8h 30m',
-                          fontWeight: FontWeight.w700,
-                          fontSize: sp(14),
-                          color: Colors.black,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+              StatisticsWidget(child: MyBarChart(statistics: weeklyStatistics)),
 
               VSpace(18),
 

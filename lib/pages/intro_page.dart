@@ -13,7 +13,7 @@ class _IntroPageState extends State<IntroPage> {
     super.initState();
 
     Future.delayed(Duration(seconds: 5), () {
-      Navigator.pushReplacementNamed(context, '/dashboard');
+      Navigator.popAndPushNamed(context, '/dashboard');
     });
   }
 

@@ -5,10 +5,21 @@ import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
 import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
 
 class FocusTimerWidget extends StatelessWidget {
-  final String timer;
-  final dynamic Function() onTap;
+  final String minute;
+  final String seconds;
+  final Color? secondColor;
 
-  const FocusTimerWidget({super.key, required this.timer, required this.onTap});
+  final dynamic Function() onTap;
+  final Color? btnColor;
+
+  const FocusTimerWidget({
+    super.key,
+    required this.onTap,
+    this.btnColor,
+    required this.minute,
+    required this.seconds,
+    this.secondColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,27 +31,38 @@ class FocusTimerWidget extends StatelessWidget {
         ),
 
         Transform.translate(
-          offset: Offset(0, -120),
-          child: Column(
+          offset: Offset(100, -120),
+          child: Row(
             children: [
               TextWidget(
-                text: timer,
+                text: minute,
                 fontWeight: FontWeight.w700,
                 fontSize: 48,
               ),
-
-              VSpace(53),
-
-              MyButton(
-                padding: EdgeInsets.symmetric(horizontal: 55, vertical: 17),
-                width: 159,
-                radius: 40,
-                text: 'Start',
+              TextWidget(text: ":", fontWeight: FontWeight.w700, fontSize: 48),
+              TextWidget(
+                text: seconds,
                 fontWeight: FontWeight.w700,
-                fontSize: 20,
-                onTap: onTap,
+                fontSize: 48,
+                color: secondColor,
               ),
             ],
+          ),
+        ),
+
+        VSpace(44),
+
+        Transform.translate(
+          offset: Offset(0, -120),
+          child: MyButton(
+            padding: EdgeInsets.symmetric(horizontal: 55, vertical: 17),
+            width: 159,
+            radius: 40,
+            text: 'Start',
+            fontWeight: FontWeight.w700,
+            fontSize: 20,
+            onTap: onTap,
+            color: btnColor,
           ),
         ),
       ],

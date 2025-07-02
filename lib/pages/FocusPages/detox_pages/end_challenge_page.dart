@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:fokusly_digital_wellbeing_app/components/my_button.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
 import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -130,8 +130,6 @@ class ModeScreen2 extends StatelessWidget {
               VSpace(22),
 
               FocusListTile(
-                contentPadding: EdgeInsets.all(0),
-
                 title: TextWidget(
                   text: 'Block Apps',
                   fontWeight: FontWeight.w400,
@@ -150,8 +148,6 @@ class ModeScreen2 extends StatelessWidget {
               VSpace(26),
 
               FocusListTile(
-                contentPadding: EdgeInsets.all(0),
-
                 title: TextWidget(
                   text: 'Do not distrub',
                   fontWeight: FontWeight.w400,
@@ -170,8 +166,6 @@ class ModeScreen2 extends StatelessWidget {
               VSpace(26),
 
               FocusListTile(
-                contentPadding: EdgeInsets.all(0),
-
                 title: TextWidget(
                   text: 'Wake up alarm',
                   fontWeight: FontWeight.w400,
@@ -190,6 +184,9 @@ class ModeScreen2 extends StatelessWidget {
               VSpace(33),
 
               MyButton(
+                width: w(298),
+                fontSize: sp(15),
+                fontWeight: FontWeight.w700,
                 padding: EdgeInsets.only(
                   left: w(20),
                   top: h(10),

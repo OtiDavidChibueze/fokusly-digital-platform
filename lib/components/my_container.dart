@@ -7,10 +7,11 @@ class MyContainer extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
   final Color color;
   final double? radius;
-  final Widget child;
+  final Widget? child;
   final DecorationImage? image;
   final List<BoxShadow>? boxShadow;
   final EdgeInsetsGeometry? margin;
+  final BoxBorder? border;
 
   const MyContainer({
     super.key,
@@ -19,10 +20,11 @@ class MyContainer extends StatelessWidget {
     this.padding,
     this.color = Colors.white,
     this.radius,
-    required this.child,
+    this.child,
     this.image,
     this.boxShadow,
     this.margin,
+    this.border,
   });
 
   @override
@@ -35,6 +37,7 @@ class MyContainer extends StatelessWidget {
       decoration: BoxDecoration(
         boxShadow: boxShadow,
         color: color,
+        border: border,
         borderRadius: BorderRadius.circular(sr(radius ?? 10.0)),
         image: image,
       ),

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fokusly_digital_wellbeing_app/model/user_model.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/app_blocker_page.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/app_blocker_page1.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/app_blocker_page2.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/detox_pages/detox_page1.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/detox_pages/detox_page2.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/detox_pages/end_challenge_page.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_main_page.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_session_page1.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_session_page2.dart';
@@ -10,6 +14,8 @@ import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_session_pag
 import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_session_page5.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/mode_screen1.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/mode_screen_2.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/timer_screen.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/weekend_challenge_page.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/dashboardScreen/dashboard_page.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_screen.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/intro_page.dart';
@@ -61,12 +67,18 @@ class FokuslyApp extends StatelessWidget {
           '/focusMainPage': (context) => FocusMainPage(),
           '/modeScreen1': (context) => ModeScreen1(),
           '/modeScreen2': (context) => ModeScreen2(),
-          '/appBlockerPage': (context) => AppBlockerPage(),
+          '/appBlockerPage1': (context) => AppBlockerPage1(),
+          '/appBlockerPage2': (context) => AppBlockerPage2(),
           '/focusSessionPage1': (context) => FocusSessionPage1(),
           '/focusSessionPage2': (context) => FocusSessionPage2(),
           '/focusSessionPage3': (context) => FocusSessionPage3(),
           '/focusSessionPage4': (context) => FocusSessionPage4(),
           '/focusSessionPage5': (context) => FocusSessionPage5(),
+          '/detoxPage1': (context) => DetoxPage1(),
+          '/detoxPage2': (context) => DetoxPage2(),
+          '/timerPage': (context) => TimerPage(),
+          '/weekendChallenge': (context) => WeekendChallengePage(),
+          '/endChallenge': (context) => EndChallengePage(),
         },
       ),
     );

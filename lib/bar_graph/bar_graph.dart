@@ -4,20 +4,20 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:fokusly_digital_wellbeing_app/bar_graph/bar_data.dart';
 
 class MyBarChart extends StatelessWidget {
-  final List weeklyStatistics;
+  final List statistics;
 
-  const MyBarChart({super.key, required this.weeklyStatistics});
+  const MyBarChart({super.key, required this.statistics});
 
   @override
   Widget build(BuildContext context) {
     BarData mybarData = BarData(
-      sunStat: weeklyStatistics[0],
-      monStat: weeklyStatistics[1],
-      tueStat: weeklyStatistics[2],
-      wedStat: weeklyStatistics[3],
-      thuStat: weeklyStatistics[4],
-      friStat: weeklyStatistics[5],
-      satStat: weeklyStatistics[6],
+      sunStat: statistics[0],
+      monStat: statistics[1],
+      tueStat: statistics[2],
+      wedStat: statistics[3],
+      thuStat: statistics[4],
+      friStat: statistics[5],
+      satStat: statistics[6],
     );
 
     mybarData.intiailizeBarData();
