@@ -35,7 +35,7 @@ class _DashboardPageState extends State<DashboardPage> {
     HomeScreen(onNavigate: navigatePage),
     FocusScreen(onNavigate: navigatePage),
     HistoryScreen(),
-    const SettingsScreen(),
+    SettingsScreen(onNavigate: navigatePage),
   ];
 
   @override
