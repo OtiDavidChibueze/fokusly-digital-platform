@@ -73,6 +73,7 @@ class SettingsMainPage extends StatelessWidget {
                       fontSize: sp(13),
                       color: Color.fromRGBO(0, 0, 0, 1),
                       textAlign: TextAlign.start,
+                      lineHeight: 2,
                     ),
 
                     SvgPicture.asset(
@@ -120,8 +121,9 @@ class SettingsMainPage extends StatelessWidget {
                     right: w(10),
                     left: w(20),
                   ),
-                  fontWeight: FontWeight.w700,
+                  fontWeight: FontWeight.w400,
                   fontSize: sp(15),
+                  textColor: Color.fromRGBO(242, 248, 252, 1),
                 ),
               ],
             ),
@@ -157,7 +159,7 @@ class SettingsMainPage extends StatelessWidget {
                     radius: 50,
                     text: 'Home',
                     onTap: () {},
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w400,
                     fontSize: sp(15),
                     padding: EdgeInsets.only(
                       top: h(10),
@@ -175,7 +177,7 @@ class SettingsMainPage extends StatelessWidget {
                     radius: 50,
                     text: 'Focus mode',
                     onTap: () {},
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w400,
                     fontSize: sp(15),
                     padding: EdgeInsets.only(
                       top: h(10),
@@ -193,7 +195,7 @@ class SettingsMainPage extends StatelessWidget {
                     radius: 50,
                     text: 'Focus Session',
                     onTap: () {},
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w400,
                     fontSize: sp(15),
                     padding: EdgeInsets.only(
                       top: h(10),
@@ -209,7 +211,7 @@ class SettingsMainPage extends StatelessWidget {
                   radius: 50,
                   text: 'History',
                   onTap: () {},
-                  fontWeight: FontWeight.w700,
+                  fontWeight: FontWeight.w400,
                   fontSize: sp(15),
                   padding: EdgeInsets.only(
                     top: h(10),
@@ -235,7 +237,7 @@ class SettingsMainPage extends StatelessWidget {
               left: w(18),
             ),
             child: MyButton(
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w400,
               fontSize: sp(15),
               border: Border.all(
                 color: Color.fromRGBO(6, 84, 91, 1),
