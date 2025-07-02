@@ -22,6 +22,8 @@ import 'package:fokusly_digital_wellbeing_app/pages/intro_page.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/onboardingScreen/onboarding_page1.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/onboardingScreen/onboarding_page2.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/onboardingScreen/onboarding_page3.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/settingsPage/settings_main_page.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/settingsPage/update_profile_page.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/sign_in_page.dart';
 import 'package:fokusly_digital_wellbeing_app/pages/sign_up_page.dart';
 import 'package:fokusly_digital_wellbeing_app/provider/user_provider.dart';
@@ -79,6 +81,8 @@ class FokuslyApp extends StatelessWidget {
           '/timerPage': (context) => TimerPage(),
           '/weekendChallenge': (context) => WeekendChallengePage(),
           '/endChallenge': (context) => EndChallengePage(),
+          '/settingsScreen': (context) => SettingsMainPage(),
+          '/updateProfile': (context) => UpdateProfilePage(),
         },
       ),
     );
