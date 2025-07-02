@@ -16,6 +16,7 @@ class FocusMainPage extends StatelessWidget {
       children: [
         // VSpace(23),
         Row(
+          spacing: 56,
           children: [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: w(10), vertical: h(10)),
@@ -25,8 +26,7 @@ class FocusMainPage extends StatelessWidget {
               ),
             ),
 
-            HSpace(56),
-
+            // HSpace(56),
             TextWidget(
               text: 'Focus Mode',
               fontWeight: FontWeight.w700,
