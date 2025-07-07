@@ -11,7 +11,7 @@ import 'package:google_fonts/google_fonts.dart';
 class HistoryScreen extends StatelessWidget {
   HistoryScreen({super.key});
 
-  //* user today statistics
+  // user today statistics
   final List<double> todayStatistics = [
     50.0,
     10.1,
@@ -22,7 +22,7 @@ class HistoryScreen extends StatelessWidget {
     15.0,
   ];
 
-  //* user weekly statistics
+  // user weekly statistics
   final List<double> weeklyStatistics = [
     100.0,
     54.1,
@@ -33,7 +33,7 @@ class HistoryScreen extends StatelessWidget {
     88.0,
   ];
 
-  //* user monthly statistics
+  // user monthly statistics
   final List<double> monthlyStatistic = [
     10.0,
     20.1,

@@ -68,6 +68,7 @@ Widget getBottomTitles(double value, TitleMeta meta) {
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: Colors.black,
+    height: 1,
   );
 
   Widget text;

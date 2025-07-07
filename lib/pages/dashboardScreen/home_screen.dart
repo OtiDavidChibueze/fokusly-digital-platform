@@ -4,7 +4,6 @@ import 'package:fokusly_digital_wellbeing_app/bar_graph/bar_graph.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_button.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_container.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
-import 'package:fokusly_digital_wellbeing_app/components/utils/focus_list_tile.dart';
 import 'package:fokusly_digital_wellbeing_app/components/utils/statistics_widget.dart';
 import 'package:fokusly_digital_wellbeing_app/provider/bottom_nav_provider.dart';
 import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
@@ -13,8 +12,7 @@ import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
-
-  //* user weekly statistics
+  // user weekly statistics
   final List<double> weeklyStatistics = [
     100.0,
     54.1,
