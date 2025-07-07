@@ -101,7 +101,7 @@ class AppBlockerPage1 extends StatelessWidget {
             ),
             radius: 50,
             text: 'Continue',
-            onTap: () => Navigator.pushNamed(context, '/focusSessionPage1'),
+            onTap: () => Navigator.pushNamed(context, '/focusSessionPage5'),
           ),
 
           VSpace(36),

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_button.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_container.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
+import 'package:fokusly_digital_wellbeing_app/components/my_text_field.dart';
 import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
 
 class UpdateProfilePage extends StatelessWidget {
@@ -48,12 +50,100 @@ class UpdateProfilePage extends StatelessWidget {
           child: Column(
             children: [
               // todo -> textfield 1
+              MyTextField(
+                radius: 50,
+                hintText: 'David',
+                textInputType: TextInputType.text,
+                padding: EdgeInsets.only(
+                  top: h(10),
+                  bottom: h(10),
+                  left: w(20),
+                  right: w(10),
+                ),
+                enabled: false,
+                hintStyle: TextStyle(
+                  fontSize: sp(13),
+                  fontWeight: FontWeight.w400,
+                  color: Color.fromRGBO(6, 84, 91, 1),
+                ),
+                endActionPane: ActionPane(
+                  motion: StretchMotion(),
+                  children: [
+                    SlidableAction(
+                      onPressed: (p0) {},
+                      backgroundColor: Color.fromRGBO(214, 255, 222, 1),
+                      label: 'Change',
+                      borderRadius: BorderRadius.circular(10),
+                      foregroundColor: Color.fromRGBO(6, 84, 91, 1),
+                    ),
+                  ],
+                ),
+              ),
+
               VSpace(40),
 
               // todo -> textfield 2
+              MyTextField(
+                radius: 50,
+                hintText: 'Chibueze',
+                textInputType: TextInputType.text,
+                padding: EdgeInsets.only(
+                  top: h(10),
+                  bottom: h(10),
+                  left: w(20),
+                  right: w(10),
+                ),
+                enabled: false,
+                hintStyle: TextStyle(
+                  fontSize: sp(13),
+                  fontWeight: FontWeight.w400,
+                  color: Color.fromRGBO(6, 84, 91, 1),
+                ),
+                endActionPane: ActionPane(
+                  motion: StretchMotion(),
+                  children: [
+                    SlidableAction(
+                      onPressed: (p0) {},
+                      backgroundColor: Color.fromRGBO(214, 255, 222, 1),
+                      label: 'Change',
+                      borderRadius: BorderRadius.circular(10),
+                      foregroundColor: Color.fromRGBO(6, 84, 91, 1),
+                    ),
+                  ],
+                ),
+              ),
               VSpace(40),
 
-              // todo -> textfield 2
+              MyTextField(
+                radius: 50,
+                hintText: 'Davidchibueze47@gmail.com',
+                textInputType: TextInputType.text,
+                padding: EdgeInsets.only(
+                  top: h(10),
+                  bottom: h(10),
+                  left: w(20),
+                  right: w(10),
+                ),
+                enabled: false,
+                hintStyle: TextStyle(
+                  fontSize: sp(13),
+                  fontWeight: FontWeight.w400,
+                  color: Color.fromRGBO(6, 84, 91, 1),
+                ),
+                endActionPane: ActionPane(
+                  motion: StretchMotion(),
+                  children: [
+                    SlidableAction(
+                      onPressed: (p0) {},
+                      backgroundColor: Color.fromRGBO(214, 255, 222, 1),
+                      label: 'Change',
+                      borderRadius: BorderRadius.circular(10),
+                      foregroundColor: Color.fromRGBO(6, 84, 91, 1),
+                    ),
+                  ],
+                ),
+              ),
+
               VSpace(53),
 
               MyButton(
@@ -61,7 +151,7 @@ class UpdateProfilePage extends StatelessWidget {
                 text: 'Update',
                 onTap: () {},
                 width: w(298),
-                padding: EdgeInsets.symmetric(vertical: h(5)),
+                padding: EdgeInsets.symmetric(vertical: h(10)),
                 fontWeight: FontWeight.w400,
                 fontSize: sp(12),
               ),

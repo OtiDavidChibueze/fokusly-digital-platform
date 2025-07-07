@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/app_blocker_page1.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/app_blocker_page2.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/detox_pages/detox_page1.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/detox_pages/detox_page2.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/detox_pages/end_challenge_page.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_main_page.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_session_page1.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_session_page2.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_session_page3.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_session_page4.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/focus_session_page5.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/mode_screen1.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/mode_screen_2.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/timer_screen.dart';
-import 'package:fokusly_digital_wellbeing_app/pages/FocusPages/weekend_challenge_page.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/app_blocker_page1.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/app_blocker_page2.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/detox_pages/detox_page1.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/detox_pages/detox_page2.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/detox_pages/end_challenge_page.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/focus_mode_page.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/focus_session_page1.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/focus_session_page2.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/focus_session_page3.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/focus_session_page4.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/focus_session_page5.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/mode_screen1.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/mode_screen_2.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/timer_screen.dart';
+import 'package:fokusly_digital_wellbeing_app/pages/focusPages/weekend_challenge_page.dart';
 
 class FocusScreen extends StatelessWidget {
-  final void Function(int)? onNavigate;
-
-  const FocusScreen({super.key, this.onNavigate});
+  const FocusScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +68,7 @@ class FocusScreen extends StatelessWidget {
             break;
 
           default:
-            page = FocusMainPage(onNavigate: onNavigate);
+            page = const FocusModePage();
         }
         return MaterialPageRoute(builder: (_) => page, settings: settings);
       },

@@ -152,7 +152,7 @@ class WeekendChallengePage extends StatelessWidget {
             width: w(298),
             radius: 50,
             text: 'Start Unplug',
-            onTap: () => Navigator.pushNamed(context, '/endChallenge'),
+            onTap: () => Navigator.pushNamed(context, '/appBlocker2'),
             fontSize: sp(12),
             fontWeight: FontWeight.w400,
           ),

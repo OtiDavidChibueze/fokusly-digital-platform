@@ -30,7 +30,7 @@ class FocusListTile extends StatelessWidget {
       trailing:
           trailing ??
           Transform.scale(
-            scale: 0.60,
+            scale: 0.70,
             child: CupertinoSwitch(
               value: value,
               onChanged: onChanged,

@@ -50,7 +50,7 @@ class EndChallengePage extends StatelessWidget {
         VSpace(100),
 
         GestureDetector(
-          onTap: () {}, // todo -> do something
+          onTap: () => Navigator.pushNamed(context, '/focusMode'),
           child: Container(
             width: w(298),
             padding: EdgeInsets.symmetric(vertical: h(10)),

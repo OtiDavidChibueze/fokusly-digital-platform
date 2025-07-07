@@ -12,13 +12,37 @@ class HistoryScreen extends StatelessWidget {
   HistoryScreen({super.key});
 
   //* user today statistics
-  List<double> todayStatistics = [50.0, 10.1, 99.3, 33.9, 5.0, 100.0, 15.0];
+  final List<double> todayStatistics = [
+    50.0,
+    10.1,
+    99.3,
+    33.9,
+    5.0,
+    100.0,
+    15.0,
+  ];
 
   //* user weekly statistics
-  List<double> weeklyStatistics = [100.0, 54.1, 32.3, 22.9, 44.0, 25.0, 88.0];
+  final List<double> weeklyStatistics = [
+    100.0,
+    54.1,
+    32.3,
+    22.9,
+    44.0,
+    25.0,
+    88.0,
+  ];
 
   //* user monthly statistics
-  List<double> monthlyStatistic = [10.0, 20.1, 32.3, 40.9, 50.0, 60.0, 70.0];
+  final List<double> monthlyStatistic = [
+    10.0,
+    20.1,
+    32.3,
+    40.9,
+    50.0,
+    60.0,
+    70.0,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +75,7 @@ class HistoryScreen extends StatelessWidget {
                   ),
 
                   Visibility(
-                    visible: false,
+                    visible: true,
                     child: MyContainer(
                       width: w(41),
                       height: h(4),
@@ -75,7 +99,7 @@ class HistoryScreen extends StatelessWidget {
                   ),
 
                   Visibility(
-                    visible: true,
+                    visible: false,
                     child: MyContainer(
                       width: w(41),
                       height: h(4),
@@ -114,7 +138,7 @@ class HistoryScreen extends StatelessWidget {
 
           VSpace(16),
 
-          StatisticsWidget(child: MyBarChart(statistics: weeklyStatistics)),
+          StatisticsWidget(child: MyBarChart(statistics: todayStatistics)),
 
           VSpace(14),
 
@@ -129,7 +153,6 @@ class HistoryScreen extends StatelessWidget {
 
           VSpace(10),
 
-          // todo
           _buildRecentSessionTile(
             icon: 'lib/assets/images/svg/study.svg',
             title: 'Studying',

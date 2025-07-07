@@ -192,9 +192,9 @@ class ModeScreen1 extends StatelessWidget {
                 ),
                 radius: 50,
                 text: 'Begin Sleep Session',
-                onTap: () => Navigator.pushNamed(context, '/appBlockerPage'),
+                onTap: () => Navigator.pushNamed(context, '/appBlockerPage1'),
                 fontSize: sp(15),
-                width: 142,
+                width: w(298),
                 fontWeight: FontWeight.w700,
               ),
 

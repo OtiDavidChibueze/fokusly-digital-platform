@@ -83,7 +83,7 @@ class TimerPage extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: h(10)),
           radius: 50,
           text: 'Done',
-          onTap: () => Navigator.pushNamed(context, '/detoxPage2'),
+          onTap: () => Navigator.pushNamed(context, '/endChallenge'),
           fontWeight: FontWeight.w400,
           fontSize: sp(12),
           textColor: Color.fromRGBO(255, 255, 255, 1),

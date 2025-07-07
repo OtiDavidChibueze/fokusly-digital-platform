@@ -197,10 +197,10 @@ class ModeScreen2 extends StatelessWidget {
                 text: 'Begin Sleep Session',
                 onTap: () => Navigator.pushNamed(context, '/appBlockerPage'),
               ),
-
-              VSpace(36),
             ],
           ),
+
+          VSpace(36),
         ],
       ),
     );

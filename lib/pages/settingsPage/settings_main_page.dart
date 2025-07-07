@@ -3,7 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_button.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_container.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
+import 'package:fokusly_digital_wellbeing_app/provider/bottom_nav_provider.dart';
 import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
+import 'package:provider/provider.dart';
 
 class SettingsMainPage extends StatelessWidget {
   final void Function(int)? onNavigate;
@@ -26,7 +28,7 @@ class SettingsMainPage extends StatelessWidget {
                   vertical: h(10),
                 ),
                 child: GestureDetector(
-                  onTap: () => onNavigate?.call(0),
+                  onTap: () => context.read<BottomNavProvider>().setIndex(0),
                   child: SvgPicture.asset('lib/assets/images/svg/Arrow1.svg'),
                 ),
               ),

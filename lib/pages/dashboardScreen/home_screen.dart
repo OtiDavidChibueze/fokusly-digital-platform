@@ -4,17 +4,26 @@ import 'package:fokusly_digital_wellbeing_app/bar_graph/bar_graph.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_button.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_container.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
+import 'package:fokusly_digital_wellbeing_app/components/utils/focus_list_tile.dart';
 import 'package:fokusly_digital_wellbeing_app/components/utils/statistics_widget.dart';
+import 'package:fokusly_digital_wellbeing_app/provider/bottom_nav_provider.dart';
 import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
-  final void Function(int)? onNavigate;
-
-  HomeScreen({super.key, this.onNavigate});
+  HomeScreen({super.key});
 
   //* user weekly statistics
-  List<double> weeklyStatistics = [100.0, 54.1, 32.3, 22.9, 44.0, 25.0, 88.0];
+  final List<double> weeklyStatistics = [
+    100.0,
+    54.1,
+    32.3,
+    22.9,
+    44.0,
+    25.0,
+    88.0,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -22,23 +31,19 @@ class HomeScreen extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         VSpace(25),
+
         Row(
-          mainAxisSize: MainAxisSize.min,
+          spacing: 8,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(sr(100)),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(sr(50)),
-                child: Image.asset(
-                  'lib/assets/images/ninja.png',
-                  width: w(44),
-                  height: h(44),
-                  fit: BoxFit.cover,
-                ),
+              borderRadius: BorderRadius.circular(sr(50)),
+              child: Image.asset(
+                'lib/assets/images/ninja.png',
+                width: w(44),
+                height: h(44),
+                fit: BoxFit.cover,
               ),
             ),
-
-            HSpace(8),
 
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,10 +85,10 @@ class HomeScreen extends StatelessWidget {
               ),
               radius: 13,
               text: 'Start Focus Session',
-              fontSize: 14,
+              fontSize: sp(14),
               textColor: Color.fromRGBO(255, 255, 255, 1),
 
-              onTap: () => onNavigate?.call(1),
+              onTap: () => context.read<BottomNavProvider>().setIndex(1),
             ),
 
             MyButton(
@@ -94,9 +99,14 @@ class HomeScreen extends StatelessWidget {
               radius: 13,
               text: 'Start Challenge',
               fontWeight: FontWeight.w400,
-              fontSize: 14,
+              fontSize: sp(14),
               color: Colors.transparent,
-              onTap: () {}, //? Naviagte to Detox challenge,
+              onTap: () {
+                context.read<BottomNavProvider>().triggerChallengeStart();
+                context.read<BottomNavProvider>().setIndex(
+                  1,
+                ); // Go to Focus tab,
+              },
               border: Border.all(color: Color.fromRGBO(6, 84, 91, 1)),
               textColor: Colors.black,
             ),
@@ -193,10 +203,14 @@ class HomeScreen extends StatelessWidget {
                     SvgPicture.asset(
                       'lib/assets/images/svg/Frame34.svg',
                       fit: BoxFit.cover,
+                      width: w(201),
+                      height: h(30),
                     ),
                   ],
                 ),
               ),
+
+              VSpace(10),
             ],
           ),
         ),

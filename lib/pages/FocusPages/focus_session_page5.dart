@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fokusly_digital_wellbeing_app/components/my_button.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
 import 'package:fokusly_digital_wellbeing_app/components/utils/focus_list_tile.dart';
 import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
@@ -110,11 +109,11 @@ class FocusSessionPage5 extends StatelessWidget {
           VSpace(59),
 
           GestureDetector(
-            onTap: () => Navigator.pushNamed(context, './detoxPage1'),
+            onTap: () => Navigator.pushNamed(context, '/focusMode'),
 
             child: Container(
               width: w(172),
-              padding: EdgeInsets.symmetric(horizontal: w(55), vertical: h(17)),
+              padding: EdgeInsets.symmetric(vertical: h(17)),
 
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(sr(50)),

@@ -5,13 +5,17 @@ import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
 import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
 
 class DetoxPage1 extends StatelessWidget {
-  const DetoxPage1({super.key});
+  final Function(int)? onNavigate;
+
+  const DetoxPage1({super.key, this.onNavigate});
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
+          VSpace(3),
+
           Image.asset(
             'lib/assets/images/crown.png',
             fit: BoxFit.cover,
@@ -68,12 +72,12 @@ class DetoxPage1 extends StatelessWidget {
                 children: [
                   _buildDuration(
                     duration: '1 day',
-                    isActive: true,
+                    isActive: false,
                     onTap: () {},
                   ),
                   _buildDuration(
                     duration: '2 day',
-                    isActive: false,
+                    isActive: true,
                     onTap: () {},
                   ),
                   _buildDuration(
@@ -110,7 +114,6 @@ Widget _buildDuration({
       border: isActive
           ? null
           : Border.all(color: Color.fromRGBO(6, 84, 91, 1), width: w(1)),
-      width: w(103),
       color: isActive ? Color.fromRGBO(6, 84, 91, 1) : Colors.transparent,
       child: Center(
         child: TextWidget(
