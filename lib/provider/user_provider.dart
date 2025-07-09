@@ -7,19 +7,26 @@ class UserProvider extends ChangeNotifier {
   bool _isLoading = false;
   String? _errorMessage;
 
-  //* public getters
+  // GETTERS
   UserModel? get user => _user;
   bool get isLoading => _isLoading;
   String? get errorMessage => _errorMessage;
 
-  //* set loading state
+  // SET LOADING STATE
   void _setLoading(bool value) {
     _isLoading = value;
 
     notifyListeners();
   }
 
-  //* register user
+  // READ USER
+  void readUser() {
+    _user = user;
+
+    notifyListeners();
+  }
+
+  // CREATE NEW USER
   Future<String?> registerUser({
     required String fullname,
     required String email,
@@ -46,6 +53,7 @@ class UserProvider extends ChangeNotifier {
     return null;
   }
 
+  // LOGIN USER
   Future<UserModel?> loginUser({
     required String email,
     required String password,

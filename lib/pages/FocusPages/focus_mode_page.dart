@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_container.dart';
 import 'package:fokusly_digital_wellbeing_app/components/my_text.dart';
+import 'package:fokusly_digital_wellbeing_app/components/progress_tracker.dart';
 import 'package:fokusly_digital_wellbeing_app/provider/bottom_nav_provider.dart';
 import 'package:fokusly_digital_wellbeing_app/utils/sizer_utils.dart';
 import 'package:provider/provider.dart';
@@ -14,6 +15,21 @@ class FocusModePage extends StatefulWidget {
 }
 
 class _FocusModePageState extends State<FocusModePage> {
+  final List<Map<String, dynamic>> tasks = const [
+    {
+      'title': 'Write a proposal',
+      'progress': 1.0, // 100% DONE
+    },
+    {
+      'title': 'Set my UI portfolio',
+      'progress': 0.5, // 50% DONE
+    },
+    {
+      'title': 'Read Two chapters of a book',
+      'progress': 0.2, // 20% DONE
+    },
+  ];
+
   bool _hasNavigated = false;
 
   @override
@@ -207,52 +223,45 @@ class _FocusModePageState extends State<FocusModePage> {
           MyContainer(
             radius: 5,
             width: sw(100),
-            child: Padding(
-              padding: EdgeInsets.only(left: w(10), right: w(27)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  VSpace(7),
+            padding: EdgeInsets.only(left: w(10), right: w(24)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                VSpace(7),
 
-                  TextWidget(
-                    text: "Today's Progress",
-                    fontWeight: FontWeight.w700,
-                    fontSize: sp(16),
-                    color: Colors.black,
+                TextWidget(
+                  text: "Today's Progress",
+                  fontWeight: FontWeight.w700,
+                  fontSize: sp(16),
+                  color: Colors.black,
+                ),
+
+                VSpace(9),
+
+                ...tasks.map(
+                  (task) => Column(
+                    children: [
+                      VSpace(7),
+
+                      ProgressTracker(
+                        title: task['title'],
+                        progress: task['progress'],
+                      ),
+
+                      VSpace(12),
+
+                      Divider(
+                        color: Color.fromRGBO(238, 235, 235, 0.46),
+                        thickness: 1,
+                      ),
+                    ],
                   ),
-
-                  VSpace(9),
-
-                  _buildProgressTile(
-                    progressTitle: 'Write  a propoasal',
-                    progressView: 'lib/assets/images/svg/progress1.svg',
-                  ),
-
-                  Divider(
-                    color: Color.fromRGBO(238, 235, 235, 0.46),
-                    thickness: 1,
-                  ),
-
-                  _buildProgressTile(
-                    progressTitle: 'Set my UI portfolio',
-                    progressView: 'lib/assets/images/svg/progress2.svg',
-                  ),
-
-                  Divider(
-                    color: Color.fromRGBO(238, 235, 235, 0.46),
-                    thickness: 1,
-                  ),
-
-                  _buildProgressTile(
-                    progressTitle: 'Read Two chapters of a book',
-                    progressView: 'lib/assets/images/svg/progress3.svg',
-                  ),
-
-                  VSpace(5),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
+
+          VSpace(62),
         ],
       ),
     );
