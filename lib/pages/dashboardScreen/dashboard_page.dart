@@ -45,13 +45,12 @@ class DashboardPage extends StatelessWidget {
             color: const Color(0xFF06545B),
             child: BottomNavigationBar(
               currentIndex: context.watch<BottomNavProvider>().selectedIndex,
+
               onTap: context.watch<BottomNavProvider>().setIndex,
               backgroundColor: Colors.transparent,
               elevation: 0,
               selectedItemColor: Colors.white,
               unselectedItemColor: Colors.white.withOpacity(0.5),
-              selectedFontSize: sp(12),
-              unselectedFontSize: sp(12),
               iconSize: 24,
               unselectedLabelStyle: TextStyle(
                 fontSize: sp(12),
