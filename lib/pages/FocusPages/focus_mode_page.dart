@@ -294,27 +294,3 @@ Widget _buildFocusItem({icon, title, onTap}) {
     ],
   );
 }
-
-Widget _buildProgressTile({
-  required String progressTitle,
-  required String progressView,
-}) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      TextWidget(
-        text: progressTitle,
-        fontWeight: FontWeight.w400,
-        fontSize: sp(13),
-        color: Colors.black,
-      ),
-
-      SvgPicture.asset(
-        progressView,
-        width: w(15),
-        height: h(15),
-        fit: BoxFit.cover,
-      ),
-    ],
-  );
-}
